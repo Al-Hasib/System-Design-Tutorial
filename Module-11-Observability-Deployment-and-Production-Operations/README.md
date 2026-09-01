@@ -1,0 +1,13 @@
+# Module 11: Observability, Deployment & Production Operations
+
+Everything up to this point has been about designing a system that *should* work. This module is about everything you need once it's actually live: how you find out something is wrong before your users tell you, how the service is packaged and scheduled so it can actually run and scale, how you ship a change to it without an outage, how you prove — deliberately, before an incident forces you to find out — that it survives failure, and how you keep running when an entire region goes down. None of this shows up in a diagram of boxes and arrows, but it's the difference between a system that works in a design doc and one that survives contact with real production traffic, real deploys, and real 3am pages.
+
+## Videos in This Module
+
+| # | Title | Description | Link |
+|---|-------|-------------|------|
+| 43 | Observability: Logging, Metrics & Distributed Tracing | The three pillars of knowing what your system is actually doing in production, and why "it works on my machine" isn't a debugging strategy at scale. | [43-observability-logging-metrics-and-distributed-tracing](43-observability-logging-metrics-and-distributed-tracing/README.md) |
+| 44 | Containers & Orchestration: Docker & Kubernetes Fundamentals | How a service actually gets packaged, scheduled, scaled, and kept healthy in modern infrastructure — the layer beneath every "just deploy it" assumption. | [44-containers-and-orchestration-docker-and-kubernetes-fundamentals](44-containers-and-orchestration-docker-and-kubernetes-fundamentals/README.md) |
+| 45 | Zero-Downtime Deployments & Database Migrations | How to ship a new version of a service — and change its database schema — without a maintenance window or a broken request. | [45-zero-downtime-deployments-and-database-migrations](45-zero-downtime-deployments-and-database-migrations/README.md) |
+| 46 | Testing Distributed Systems: Load Testing & Chaos Engineering | Why unit tests don't tell you if your system survives real traffic or real failures, and how load testing and deliberate fault injection close that gap. | [46-testing-distributed-systems-load-testing-and-chaos-engineering](46-testing-distributed-systems-load-testing-and-chaos-engineering/README.md) |
+| 47 | Multi-Region Architecture & Disaster Recovery | Designing for an entire region going down — active-active vs. active-passive, and the backup/recovery metrics (RTO/RPO) that define how bad a disaster is allowed to get. | [47-multi-region-architecture-and-disaster-recovery](47-multi-region-architecture-and-disaster-recovery/README.md) |

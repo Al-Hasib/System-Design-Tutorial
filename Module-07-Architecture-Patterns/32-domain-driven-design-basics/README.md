@@ -54,7 +54,7 @@ Domain-Driven Design says your software structure should mirror your actual busi
 
 ### What's Next
 
-That wraps up Module 7 on architecture patterns — you now have a framework for deciding monolith versus microservices, how those services communicate and discover each other, and how to actually decide where their boundaries should go using DDD. In the next module, we shift from patterns to practice: we'll start walking through full end-to-end system design interview questions, starting with designing a URL shortener, and you'll see every concept from this course get applied together in one place.
+That wraps up Module 7 on architecture patterns — you now have a framework for deciding monolith versus microservices, how those services communicate and discover each other, and how to actually decide where their boundaries should go using DDD. Before we get to full case-study interviews, Module 8 drops down a level to fill in a few foundational pieces we've been assuming so far: how transport protocols like TCP, UDP, and gRPC actually move bytes, what's happening inside a web server under load, how services agree on a message format, and the security fundamentals every backend needs. Then, in Module 9, we shift from patterns to practice: we'll start walking through full end-to-end system design interview questions, starting with designing a URL shortener, and you'll see every concept from this course get applied together in one place.
 
 ## Key Takeaways
 

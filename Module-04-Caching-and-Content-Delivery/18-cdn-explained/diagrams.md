@@ -21,7 +21,7 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    subgraph Internet Backbone (BGP Routing)
+    subgraph Backbone["Internet Backbone (BGP Routing)"]
         direction TB
         R[Same Anycast IP announced from multiple PoPs]
     end

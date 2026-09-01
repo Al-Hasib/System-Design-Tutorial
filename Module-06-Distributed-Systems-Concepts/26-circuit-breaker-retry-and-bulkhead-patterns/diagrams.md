@@ -41,7 +41,7 @@ sequenceDiagram
 
     Client->>Service: Attempt 4
     Service-->>Client: Success (200 OK)
-    Note over Client: Retry budget respected; stop retrying
+    Note over Client: Retry budget respected — stop retrying
 ```
 
 Caption: Each retry delay roughly doubles and includes random jitter, spreading out retries so many clients don't hammer the service in synchronized waves.

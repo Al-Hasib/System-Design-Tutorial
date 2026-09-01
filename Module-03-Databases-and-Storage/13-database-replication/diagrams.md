@@ -12,6 +12,7 @@ flowchart TD
     Master -->|Async / Sync replication| Follower1
     Master -->|Async / Sync replication| Follower2
 ```
+
 *Caption: All writes go to a single master, which streams changes to followers; reads can be distributed across the master and any follower to scale read capacity.*
 
 ## 2. Master-Master (Multi-Leader) Replication
@@ -24,6 +25,7 @@ flowchart LR
     MasterUS -->|Conflict?| Resolve[Conflict Resolution\nLWW / Vector Clocks]
     MasterEU -->|Conflict?| Resolve
 ```
+
 *Caption: Multiple masters each accept writes locally and replicate to each other; concurrent writes to the same record must go through conflict resolution.*
 
 ## 3. Failover Sequence in Master-Slave Replication
@@ -45,4 +47,5 @@ sequenceDiagram
     App->>F1: Write request (new master)
     F1-->>F2: Replicate change
 ```
+
 *Caption: When the master fails, a follower must be detected as missing, elected, and promoted before writes can resume — this gap is the failover window.*

@@ -4,10 +4,11 @@
 
 ```mermaid
 flowchart LR
-    A[Single Function\n\"Write correct code\"] --> B[Single Service\n\"Combine functions into an app\"]
-    B --> C[Full System\n\"Clients, servers, DB, cache, queue working together\"]
-    C --> D[System Design\n\"How do all pieces fit & scale?\"]
+    A["Single Function<br/>'Write correct code'"] --> B["Single Service<br/>'Combine functions into an app'"]
+    B --> C["Full System<br/>'Clients, servers, DB, cache, queue working together'"]
+    C --> D["System Design<br/>'How do all pieces fit & scale?'"]
 ```
+
 *Caption: System design zooms out from individual code to how entire systems of components fit together.*
 
 ## 2. Core Building Blocks of a Typical System
@@ -24,6 +25,7 @@ flowchart TD
     Server1 --> Queue[[Message Queue]]
     Queue --> Worker[Background Worker]
 ```
+
 *Caption: The recurring cast of characters — client, load balancer, servers, cache, database, and message queue — that this entire course will explain piece by piece.*
 
 ## 3. Course Roadmap Flow
@@ -36,6 +38,11 @@ flowchart LR
     M4 --> M5[Module 5\nMessaging]
     M5 --> M6[Module 6\nDistributed Systems]
     M6 --> M7[Module 7\nArchitecture Patterns]
-    M7 --> M8[Module 8\nCase Studies]
+    M7 --> M8[Module 8\nProtocols, Formats & Security]
+    M8 --> M9[Module 9\nDatabase & API Internals]
+    M9 --> M10[Module 10\nDistributed Coordination & Scale]
+    M10 --> M11[Module 11\nObservability & Production Ops]
+    M11 --> M12[Module 12\nCase Studies]
 ```
+
 *Caption: Each module builds directly on the vocabulary and concepts introduced in the previous one.*

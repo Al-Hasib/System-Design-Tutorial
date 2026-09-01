@@ -21,6 +21,7 @@ sequenceDiagram
     S-->>C: 200 OK (new message, sent as soon as available)
     C->>S: GET /messages/new (immediately re-opened)
 ```
+
 *Short polling asks repeatedly regardless of whether there's new data; long polling holds the request open and responds the instant something arrives.*
 
 ## 2. Server-Sent Events — One Persistent, One-Way Stream
@@ -36,8 +37,9 @@ sequenceDiagram
     S-->>C: event: score_update, data: {...}
     S-->>C: event: score_update, data: {...}
     deactivate S
-    Note over C,S: Single connection stays open; server pushes events as they occur
+    Note over C,S: Single connection stays open — server pushes events as they occur
 ```
+
 *One HTTP connection stays open indefinitely while the server streams events down to the client; the client never sends data back over this channel.*
 
 ## 3. WebSocket Handshake and Full-Duplex Communication
@@ -55,4 +57,5 @@ sequenceDiagram
     S->>C: message: "new user joined"
     C->>S: message: "got it"
 ```
+
 *After the HTTP-to-WebSocket upgrade handshake, either side can send messages to the other at any time over the same persistent connection.*

@@ -1,6 +1,6 @@
 # System Design Tutorial — YouTube Playlist
 
-A complete System Design course, structured as a 39-video YouTube playlist that takes a learner from **absolute beginner to advanced, interview-ready** engineer. Every video has its own folder with everything needed to prep, record, and study from:
+A complete System Design course, structured as a 54-video YouTube playlist that takes a learner from **absolute beginner to advanced, interview-ready** engineer. Every video has its own folder with everything needed to prep, record, and study from:
 
 | File | Purpose |
 |---|---|
@@ -10,7 +10,7 @@ A complete System Design course, structured as a 39-video YouTube playlist that 
 | `resources.md` | Curated further-reading links (official docs, papers, Wikipedia) |
 | `quiz.md` | Practice & interview questions with model answers |
 
-Recommended viewing order is numeric (01 → 39) — later videos assume concepts from earlier ones, and each video's `README.md` links back to its specific prerequisites.
+Recommended viewing order is numeric (01 → 54) — later videos assume concepts from earlier ones, and each video's `README.md` links back to its specific prerequisites.
 
 ## Course Map
 
@@ -88,22 +88,61 @@ Structuring whole systems (and teams) around services.
 | 31 | Microservices Communication & Service Discovery | [31-microservices-communication-and-service-discovery](Module-07-Architecture-Patterns/31-microservices-communication-and-service-discovery/README.md) |
 | 32 | Domain-Driven Design Basics for System Design | [32-domain-driven-design-basics](Module-07-Architecture-Patterns/32-domain-driven-design-basics/README.md) |
 
-### [Module 8: Case Studies — System Design Interview Practice](Module-08-Case-Studies-Interview-Practice/README.md) — *Advanced / Capstone*
+### [Module 8: Protocols, Formats & Security](Module-08-Protocols-Formats-and-Security/README.md) — *Intermediate/Advanced*
+The substrate underneath everything else: how bytes actually move, how a web server handles concurrent load, how services agree on data formats, and the security fundamentals that protect all of it.
+
+| # | Video | Folder |
+|---|---|---|
+| 33 | Transport Protocols: TCP vs UDP & Where gRPC Fits | [33-transport-protocols-tcp-udp-and-grpc](Module-08-Protocols-Formats-and-Security/33-transport-protocols-tcp-udp-and-grpc/README.md) |
+| 34 | Web Server Internals: Concurrency, Threading & Content Serving | [34-web-server-internals-concurrency-and-content-serving](Module-08-Protocols-Formats-and-Security/34-web-server-internals-concurrency-and-content-serving/README.md) |
+| 35 | Message Formats: JSON, XML & Protocol Buffers | [35-message-formats-json-xml-and-protocol-buffers](Module-08-Protocols-Formats-and-Security/35-message-formats-json-xml-and-protocol-buffers/README.md) |
+| 36 | Security Fundamentals: TLS, Encryption, AuthN/AuthZ & Firewalls | [36-security-fundamentals-tls-encryption-auth-and-firewalls](Module-08-Protocols-Formats-and-Security/36-security-fundamentals-tls-encryption-auth-and-firewalls/README.md) |
+
+### [Module 9: Database & API Internals](Module-09-Database-and-API-Internals/README.md) — *Advanced*
+One level deeper on databases (transaction isolation, storage engine internals) and a genuine alternative to REST.
+
+| # | Video | Folder |
+|---|---|---|
+| 37 | Transaction Isolation Levels & Concurrency Control: Locking vs. MVCC | [37-transaction-isolation-levels-and-concurrency-control](Module-09-Database-and-API-Internals/37-transaction-isolation-levels-and-concurrency-control/README.md) |
+| 38 | LSM Trees vs. B-Trees: Storage Engine Internals | [38-lsm-trees-vs-b-trees-storage-engine-internals](Module-09-Database-and-API-Internals/38-lsm-trees-vs-b-trees-storage-engine-internals/README.md) |
+| 39 | GraphQL: A Query-Based Alternative to REST | [39-graphql-a-query-based-alternative-to-rest](Module-09-Database-and-API-Internals/39-graphql-a-query-based-alternative-to-rest/README.md) |
+
+### [Module 10: Distributed Coordination & Scale Techniques](Module-10-Distributed-Coordination-and-Scale-Techniques/README.md) — *Advanced*
+Coordinating exclusive access, ordering events, and answering approximate questions cheaply — without a shared clock or unlimited memory.
+
+| # | Video | Folder |
+|---|---|---|
+| 40 | Distributed Locking: Redlock, ZooKeeper & etcd | [40-distributed-locking-redlock-zookeeper-and-etcd](Module-10-Distributed-Coordination-and-Scale-Techniques/40-distributed-locking-redlock-zookeeper-and-etcd/README.md) |
+| 41 | Logical Clocks & Time in Distributed Systems | [41-logical-clocks-and-time-in-distributed-systems](Module-10-Distributed-Coordination-and-Scale-Techniques/41-logical-clocks-and-time-in-distributed-systems/README.md) |
+| 42 | Probabilistic Data Structures: Bloom Filters, HyperLogLog & Count-Min Sketch | [42-probabilistic-data-structures-bloom-filters-hyperloglog-and-count-min-sketch](Module-10-Distributed-Coordination-and-Scale-Techniques/42-probabilistic-data-structures-bloom-filters-hyperloglog-and-count-min-sketch/README.md) |
+
+### [Module 11: Observability, Deployment & Production Operations](Module-11-Observability-Deployment-and-Production-Operations/README.md) — *Advanced*
+Everything needed once a system is actually live: seeing what it's doing, packaging and scheduling it, shipping changes safely, proving it survives failure, and surviving a whole region going down.
+
+| # | Video | Folder |
+|---|---|---|
+| 43 | Observability: Logging, Metrics & Distributed Tracing | [43-observability-logging-metrics-and-distributed-tracing](Module-11-Observability-Deployment-and-Production-Operations/43-observability-logging-metrics-and-distributed-tracing/README.md) |
+| 44 | Containers & Orchestration: Docker & Kubernetes Fundamentals | [44-containers-and-orchestration-docker-and-kubernetes-fundamentals](Module-11-Observability-Deployment-and-Production-Operations/44-containers-and-orchestration-docker-and-kubernetes-fundamentals/README.md) |
+| 45 | Zero-Downtime Deployments & Database Migrations | [45-zero-downtime-deployments-and-database-migrations](Module-11-Observability-Deployment-and-Production-Operations/45-zero-downtime-deployments-and-database-migrations/README.md) |
+| 46 | Testing Distributed Systems: Load Testing & Chaos Engineering | [46-testing-distributed-systems-load-testing-and-chaos-engineering](Module-11-Observability-Deployment-and-Production-Operations/46-testing-distributed-systems-load-testing-and-chaos-engineering/README.md) |
+| 47 | Multi-Region Architecture & Disaster Recovery | [47-multi-region-architecture-and-disaster-recovery](Module-11-Observability-Deployment-and-Production-Operations/47-multi-region-architecture-and-disaster-recovery/README.md) |
+
+### [Module 12: Case Studies — System Design Interview Practice](Module-12-Case-Studies-Interview-Practice/README.md) — *Advanced / Capstone*
 Full mock interviews applying everything above to real "design X" problems: requirements → capacity estimation → high-level design → deep dive → trade-offs.
 
 | # | Video | Folder |
 |---|---|---|
-| 33 | Design a URL Shortener | [33-design-a-url-shortener](Module-08-Case-Studies-Interview-Practice/33-design-a-url-shortener/README.md) |
-| 34 | Design a Rate Limiter (Practical System Design) | [34-design-a-rate-limiter](Module-08-Case-Studies-Interview-Practice/34-design-a-rate-limiter/README.md) |
-| 35 | Design a Chat Application (like WhatsApp) | [35-design-a-chat-application-whatsapp](Module-08-Case-Studies-Interview-Practice/35-design-a-chat-application-whatsapp/README.md) |
-| 36 | Design a News Feed System (like Twitter/Facebook) | [36-design-a-news-feed-system-twitter](Module-08-Case-Studies-Interview-Practice/36-design-a-news-feed-system-twitter/README.md) |
-| 37 | Design a Distributed File Storage System (like Google Drive/Dropbox) | [37-design-a-distributed-file-storage-google-drive](Module-08-Case-Studies-Interview-Practice/37-design-a-distributed-file-storage-google-drive/README.md) |
-| 38 | Design a Video Streaming Platform (like YouTube/Netflix) | [38-design-a-video-streaming-platform-youtube-netflix](Module-08-Case-Studies-Interview-Practice/38-design-a-video-streaming-platform-youtube-netflix/README.md) |
-| 39 | Design a Ride-Sharing System (like Uber) | [39-design-a-ride-sharing-system-uber](Module-08-Case-Studies-Interview-Practice/39-design-a-ride-sharing-system-uber/README.md) |
+| 48 | Design a URL Shortener | [48-design-a-url-shortener](Module-12-Case-Studies-Interview-Practice/48-design-a-url-shortener/README.md) |
+| 49 | Design a Rate Limiter (Practical System Design) | [49-design-a-rate-limiter](Module-12-Case-Studies-Interview-Practice/49-design-a-rate-limiter/README.md) |
+| 50 | Design a Chat Application (like WhatsApp) | [50-design-a-chat-application-whatsapp](Module-12-Case-Studies-Interview-Practice/50-design-a-chat-application-whatsapp/README.md) |
+| 51 | Design a News Feed System (like Twitter/Facebook) | [51-design-a-news-feed-system-twitter](Module-12-Case-Studies-Interview-Practice/51-design-a-news-feed-system-twitter/README.md) |
+| 52 | Design a Distributed File Storage System (like Google Drive/Dropbox) | [52-design-a-distributed-file-storage-google-drive](Module-12-Case-Studies-Interview-Practice/52-design-a-distributed-file-storage-google-drive/README.md) |
+| 53 | Design a Video Streaming Platform (like YouTube/Netflix) | [53-design-a-video-streaming-platform-youtube-netflix](Module-12-Case-Studies-Interview-Practice/53-design-a-video-streaming-platform-youtube-netflix/README.md) |
+| 54 | Design a Ride-Sharing System (like Uber) | [54-design-a-ride-sharing-system-uber](Module-12-Case-Studies-Interview-Practice/54-design-a-ride-sharing-system-uber/README.md) |
 
 ## How to Use This Repo
 
 - **Recording a video?** Open that video's `README.md` — it's a full script with an intro hook, structured talking points, and an outro leading into the next video.
-- **Studying for an interview?** Skim `notes.md` and `quiz.md` across modules for a fast-revision path; Module 8's case studies are the best final rehearsal.
+- **Studying for an interview?** Skim `notes.md` and `quiz.md` across modules for a fast-revision path; Module 12's case studies are the best final rehearsal.
 - **Want visuals for the video/slides?** `diagrams.md` in each folder has ready-to-render Mermaid diagrams.
 - **Going deeper on a topic?** `resources.md` links to official docs and, where relevant, the original papers.

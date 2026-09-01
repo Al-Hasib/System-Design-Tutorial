@@ -4,15 +4,16 @@
 
 ```mermaid
 flowchart TD
-    R[Gather Requirements] --> F[Functional Requirements\n\"What it does\"]
-    R --> N[Non-Functional Requirements\n\"How well it does it\"]
+    R[Gather Requirements] --> F["Functional Requirements<br/>'What it does'"]
+    R --> N["Non-Functional Requirements<br/>'How well it does it'"]
     F --> F1[Upload photo]
     F --> F2[Follow user]
     F --> F3[View feed]
-    N --> N1[Latency < 300ms]
+    N --> N1["Latency &lt; 300ms"]
     N --> N2[99.99% availability]
     N --> N3[500M DAU scalability]
 ```
+
 *Caption: Every design starts by splitting requirements into what the system does versus how well it must do it.*
 
 ## 2. Requirements Gathering Flow in an Interview
@@ -28,6 +29,7 @@ sequenceDiagram
     Interviewer->>Candidate: Read-heavy, eventual consistency OK
     Candidate->>Interviewer: Great, I'll design around those constraints
 ```
+
 *Caption: Clarifying questions turn a vague prompt into concrete, design-driving requirements before any architecture is proposed.*
 
 ## 3. Back-of-the-Envelope Estimation Pipeline
@@ -39,4 +41,5 @@ flowchart LR
     AvgRPS --> PeakRPS[Peak RPS\n× 2-3x]
     PeakRPS --> Design[Architecture Decisions\ne.g. need load balancing?]
 ```
+
 *Caption: A simple chain of multiplication and division turns "lots of users" into concrete numbers that drive real design decisions.*

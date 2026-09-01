@@ -1,0 +1,12 @@
+# Module 8: Protocols, Formats & Security
+
+Every module so far has quietly leaned on assumptions we never fully unpacked: that "the network" reliably moves bytes, that a web server can somehow serve thousands of clients at once, that services agree on how to encode the data they exchange, and that all of this happens without an attacker reading or tampering with it along the way. This module goes one layer deeper and makes those assumptions explicit. We'll look at what TCP and UDP actually do differently (and where gRPC fits on top of them), what's really happening inside a web server process under concurrent load, how JSON, XML, and Protocol Buffers trade off readability against bandwidth, and the security fundamentals — encryption, authentication, authorization, and network defenses — that belong in every backend engineer's toolkit. None of this replaces the earlier modules; it's the substrate underneath them, and it's exactly the kind of "why does this even work" knowledge that separates someone who can operate a framework from someone who understands the system it's built on.
+
+## Videos in This Module
+
+| # | Title | Description | Link |
+|---|-------|-------------|------|
+| 33 | Transport Protocols: TCP vs UDP & Where gRPC Fits | What TCP's reliability guarantees actually cost, why UDP trades reliability for speed, and how gRPC builds a modern RPC framework on top of HTTP/2. | [33-transport-protocols-tcp-udp-and-grpc](33-transport-protocols-tcp-udp-and-grpc/README.md) |
+| 34 | Web Server Internals: Concurrency, Threading & Content Serving | How a web server actually handles thousands of simultaneous connections — threads, event loops, and the difference between serving static and dynamic content. | [34-web-server-internals-concurrency-and-content-serving](34-web-server-internals-concurrency-and-content-serving/README.md) |
+| 35 | Message Formats: JSON, XML & Protocol Buffers | How services agree on the shape of data they exchange, and the real trade-offs between human-readable and binary serialization formats. | [35-message-formats-json-xml-and-protocol-buffers](35-message-formats-json-xml-and-protocol-buffers/README.md) |
+| 36 | Security Fundamentals: TLS, Encryption, AuthN/AuthZ & Firewalls | The security building blocks every backend system needs — encryption, authentication vs authorization, and the network defenses that keep services safe. | [36-security-fundamentals-tls-encryption-auth-and-firewalls](36-security-fundamentals-tls-encryption-auth-and-firewalls/README.md) |

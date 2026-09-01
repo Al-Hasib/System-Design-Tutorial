@@ -24,8 +24,8 @@
 8. **What are the two main reasons this course gives for learning system design?**
    (1) It's a standard part of technical interviews for mid/senior roles, and (2) it's a core real-world skill for engineers who need to make architecture decisions as they grow in their careers.
 
-9. **List the 8 modules of this course in order.**
-   Foundations; Networking & Communication; Databases & Storage; Caching & Content Delivery; Messaging & Asynchronous Systems; Distributed Systems Concepts; Architecture Patterns; Case Studies/Interview Practice.
+9. **List the 12 modules of this course in order.**
+   Foundations; Networking & Communication; Databases & Storage; Caching & Content Delivery; Messaging & Asynchronous Systems; Distributed Systems Concepts; Architecture Patterns; Protocols, Formats & Security; Database & API Internals; Distributed Coordination & Scale Techniques; Observability, Deployment & Production Operations; Case Studies/Interview Practice.
 
 10. **True or False: System design requires knowing a specific programming language deeply.**
     False — system design is largely language-agnostic; it's about architecture and trade-offs, though implementation knowledge can help you reason about feasibility.

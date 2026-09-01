@@ -24,7 +24,7 @@
 - **Load balancer** — distributes incoming traffic across multiple servers.
 - **Message queue** — decouples producers and consumers of data/events.
 
-## Course Roadmap (8 Modules)
+## Course Roadmap (12 Modules)
 
 | Module | Focus |
 |---|---|
@@ -35,7 +35,11 @@
 | 5. Messaging & Async Systems | Queues, pub/sub, event-driven, stream processing |
 | 6. Distributed Systems Concepts | Consistent hashing, rate limiting, circuit breakers, consensus |
 | 7. Architecture Patterns | Monolith vs microservices, service discovery, DDD |
-| 8. Case Studies | URL shortener, rate limiter, chat app, news feed, file storage, video streaming, ride sharing |
+| 8. Protocols, Formats & Security | Transport protocols (TCP/UDP/gRPC), web server internals, message formats, security fundamentals |
+| 9. Database & API Internals | Transaction isolation & concurrency control, LSM trees vs B-trees, GraphQL |
+| 10. Distributed Coordination & Scale Techniques | Distributed locking, logical clocks, probabilistic data structures |
+| 11. Observability, Deployment & Production Operations | Logging/metrics/tracing, containers/Kubernetes, zero-downtime deploys, chaos engineering, multi-region DR |
+| 12. Case Studies | URL shortener, rate limiter, chat app, news feed, file storage, video streaming, ride sharing |
 
 ## Quick Revision Bullets
 

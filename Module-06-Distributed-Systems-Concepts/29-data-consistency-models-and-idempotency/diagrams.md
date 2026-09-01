@@ -11,6 +11,7 @@ flowchart LR
     style A fill:#f96,stroke:#333
     style D fill:#9cf,stroke:#333
 ```
+
 *Caption: Consistency models form a spectrum — the strongest guarantees (left) cost the most in coordination and availability; the weakest (right) maximize availability and latency.*
 
 A client retrying a payment request with an idempotency key avoids a double charge.
@@ -38,6 +39,7 @@ sequenceDiagram
     Server-->>Client: 200 OK (charge_id: ch_1, cached)
     Note over Payments: Payment processor never called again — no double charge
 ```
+
 *Caption: The server deduplicates retries by idempotency key, returning the original result instead of reprocessing the payment.*
 
 Causal consistency: a reply must never be visible before the comment it responds to.
@@ -57,4 +59,5 @@ sequenceDiagram
     UserB->>NodeY: Read feed
     NodeY-->>UserB: [C1, R1] (never R1 without C1)
 ```
+
 *Caption: Causal consistency guarantees that a "happens-before" relationship (reply depends on comment) is preserved across all replicas, even though unrelated events may still arrive out of order.*

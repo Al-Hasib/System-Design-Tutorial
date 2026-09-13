@@ -1,8 +1,6 @@
 # CDN (Content Delivery Network) Explained
 
 **Difficulty:** Intermediate
-**Estimated Length:** 10-13 min
-**Prerequisites:** [17 - Caching Strategies & Cache Invalidation](../17-caching-strategies-and-cache-invalidation/README.md), [03 - Client-Server Architecture and How the Internet Works](../../Module-01-Foundations/03-client-server-architecture-and-how-the-internet-works/README.md)
 
 ## Learning Objectives
 

@@ -1,8 +1,6 @@
 # Distributed Caching with Redis & Memcached
 
 **Difficulty:** Intermediate/Advanced
-**Estimated Length:** 13-16 min
-**Prerequisites:** [17 - Caching Strategies & Cache Invalidation](../17-caching-strategies-and-cache-invalidation/README.md), [13 - Database Replication](../../Module-03-Databases-and-Storage/13-database-replication/README.md)
 
 ## Learning Objectives
 

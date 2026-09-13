@@ -1,8 +1,6 @@
 # Caching Strategies & Cache Invalidation (Cache-Aside, Write-Through, Write-Back)
 
 **Difficulty:** Intermediate
-**Estimated Length:** 12-15 min
-**Prerequisites:** [04 - Scalability Basics: Vertical vs Horizontal Scaling](../../Module-01-Foundations/04-scalability-basics-vertical-vs-horizontal-scaling/README.md), [12 - Database Indexing Explained](../../Module-03-Databases-and-Storage/12-database-indexing-explained/README.md)
 
 ## Learning Objectives
 

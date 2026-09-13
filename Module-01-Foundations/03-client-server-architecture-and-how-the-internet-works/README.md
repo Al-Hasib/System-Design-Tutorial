@@ -1,8 +1,6 @@
 # Client-Server Architecture & How the Internet Works (DNS, IP, TCP/IP, HTTP)
 
 **Difficulty:** Beginner
-**Estimated video length:** 14-18 min
-**Prerequisites:** [01 - What is System Design?](../01-what-is-system-design/README.md), [02 - Functional vs Non-Functional Requirements](../02-functional-vs-non-functional-requirements/README.md)
 
 ## Learning Objectives
 

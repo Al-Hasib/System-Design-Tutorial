@@ -1,7 +1,6 @@
 # Functional vs Non-Functional Requirements
 
 **Difficulty:** Beginner
-**Estimated video length:** 10-14 min
 **Prerequisites:** [01 - What is System Design?](../01-what-is-system-design/README.md)
 
 ## Learning Objectives

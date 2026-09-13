@@ -1,8 +1,6 @@
 # Scalability Basics: Vertical vs Horizontal Scaling
 
 **Difficulty:** Beginner
-**Estimated video length:** 12-15 min
-**Prerequisites:** [03 - Client-Server Architecture & How the Internet Works](../03-client-server-architecture-and-how-the-internet-works/README.md), [02 - Functional vs Non-Functional Requirements](../02-functional-vs-non-functional-requirements/README.md)
 
 ## Learning Objectives
 

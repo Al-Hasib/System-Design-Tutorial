@@ -1,8 +1,6 @@
 # Availability, Reliability, Redundancy & Fault Tolerance
 
 **Difficulty:** Beginner
-**Estimated video length:** 12-15 min
-**Prerequisites:** [04 - Scalability Basics: Vertical vs Horizontal Scaling](../04-scalability-basics-vertical-vs-horizontal-scaling/README.md), [02 - Functional vs Non-Functional Requirements](../02-functional-vs-non-functional-requirements/README.md)
 
 ## Learning Objectives
 

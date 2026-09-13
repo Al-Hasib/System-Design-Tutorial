@@ -1,10 +1,6 @@
 # Database Sharding & Partitioning Strategies
 
 **Difficulty:** Intermediate/Advanced
-**Estimated length:** 12-18 min
-**Prerequisites:**
-- [Database Replication: Master-Slave & Master-Master](../13-database-replication/README.md)
-- [Scalability Basics: Vertical vs Horizontal Scaling](../../Module-01-Foundations/04-scalability-basics-vertical-vs-horizontal-scaling/README.md)
 
 ## Learning Objectives
 

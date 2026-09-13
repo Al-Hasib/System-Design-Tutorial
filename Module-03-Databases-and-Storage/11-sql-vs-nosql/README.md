@@ -1,8 +1,6 @@
 # SQL vs NoSQL: Choosing the Right Database
 
 **Difficulty:** Beginner/Intermediate
-**Estimated video length:** 12-18 min
-**Prerequisites:** [What is System Design?](../../Module-01-Foundations/01-what-is-system-design/README.md), [Scalability Basics: Vertical vs Horizontal Scaling](../../Module-01-Foundations/04-scalability-basics-vertical-vs-horizontal-scaling/README.md)
 
 ## Learning Objectives
 

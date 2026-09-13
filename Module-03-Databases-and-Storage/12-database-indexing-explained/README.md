@@ -1,6 +1,6 @@
 # Database Indexing Explained (B-Trees, Hash Indexes)
 
-**Difficulty:** Intermediate | **Estimated length:** 12-18 min | **Prerequisites:** [SQL vs NoSQL: Choosing the Right Database](../11-sql-vs-nosql/README.md)
+**Difficulty:** Intermediate
 
 ## Learning Objectives
 

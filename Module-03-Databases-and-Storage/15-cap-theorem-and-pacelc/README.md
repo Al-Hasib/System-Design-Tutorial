@@ -1,8 +1,6 @@
 # CAP Theorem & PACELC Explained
 
 **Difficulty:** Intermediate/Advanced
-**Estimated length:** 12-18 min
-**Prerequisites:** [Database Replication: Master-Slave & Master-Master](../13-database-replication/README.md), [Database Sharding & Partitioning Strategies](../14-database-sharding-and-partitioning/README.md)
 
 ## Learning Objectives
 

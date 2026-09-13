@@ -1,8 +1,6 @@
 # ACID vs BASE, Normalization vs Denormalization
 
 **Difficulty:** Intermediate
-**Estimated length:** 12-18 min
-**Prerequisites:** [SQL vs NoSQL: Choosing the Right Database](../11-sql-vs-nosql/README.md), [CAP Theorem & PACELC Explained](../15-cap-theorem-and-pacelc/README.md)
 
 ## Learning Objectives
 

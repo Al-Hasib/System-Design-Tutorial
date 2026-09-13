@@ -1,8 +1,6 @@
 # Database Replication: Master-Slave & Master-Master
 
 **Difficulty:** Intermediate
-**Estimated video length:** 12-18 min
-**Prerequisites:** [Database Indexing Explained (B-Trees, Hash Indexes)](../12-database-indexing-explained/README.md), [Availability, Reliability, and Fault Tolerance](../../Module-01-Foundations/05-availability-reliability-and-fault-tolerance/README.md)
 
 ## Learning Objectives
 

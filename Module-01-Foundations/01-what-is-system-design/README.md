@@ -1,8 +1,6 @@
 # What is System Design? Roadmap & How to Learn It
 
-**Difficulty:** Beginner
-**Estimated video length:** 10-12 min
-**Prerequisites:** None — this is the first video in the course.
+Prerequisites: None 
 
 ## Learning Objectives
 

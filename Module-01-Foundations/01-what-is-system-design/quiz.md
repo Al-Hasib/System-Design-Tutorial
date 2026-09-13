@@ -32,6 +32,6 @@
 
 11. **Scenario: A junior engineer says "I don't need system design, I just need to write good code." How would you respond?**
     Writing good code is necessary but not sufficient — as systems grow, decisions about how components interact, scale, and stay reliable become the dominant factor in success, and those decisions are exactly what system design teaches you to reason about.
-
+    
 12. **Why does this course start with "Foundations" before networking, databases, or distributed systems?**
     Because concepts like requirements gathering, client-server communication, scalability, and reliability are prerequisites referenced throughout every later module — starting elsewhere would require constantly backtracking to explain basic vocabulary.

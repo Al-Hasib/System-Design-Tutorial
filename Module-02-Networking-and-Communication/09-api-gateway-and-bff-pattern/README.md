@@ -1,8 +1,6 @@
 # API Gateway & Backend-for-Frontend Pattern
 
 **Difficulty:** Intermediate
-**Estimated length:** 12-14 min
-**Prerequisites:** [08 - Forward Proxy vs Reverse Proxy](../08-forward-proxy-vs-reverse-proxy/README.md), [07 - Load Balancing Explained](../07-load-balancing-explained/README.md)
 
 ## Learning Objectives
 

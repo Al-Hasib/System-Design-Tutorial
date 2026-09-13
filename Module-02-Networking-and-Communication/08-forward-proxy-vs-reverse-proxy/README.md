@@ -1,8 +1,6 @@
 # Forward Proxy vs Reverse Proxy
 
 **Difficulty:** Intermediate
-**Estimated length:** 10-12 min
-**Prerequisites:** [07 - Load Balancing Explained](../07-load-balancing-explained/README.md), [06 - HTTP/HTTPS & REST APIs Explained](../06-http-https-and-rest-apis/README.md)
 
 ## Learning Objectives
 

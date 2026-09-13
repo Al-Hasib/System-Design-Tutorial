@@ -1,8 +1,6 @@
 # WebSockets, Long Polling & Server-Sent Events
 
 **Difficulty:** Intermediate
-**Estimated length:** 12-15 min
-**Prerequisites:** [06 - HTTP/HTTPS & REST APIs Explained](../06-http-https-and-rest-apis/README.md), [09 - API Gateway & Backend-for-Frontend Pattern](../09-api-gateway-and-bff-pattern/README.md)
 
 ## Learning Objectives
 

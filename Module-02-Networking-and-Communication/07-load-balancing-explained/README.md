@@ -1,8 +1,6 @@
 # Load Balancing Explained (Algorithms & L4 vs L7)
 
 **Difficulty:** Intermediate
-**Estimated length:** 12-15 min
-**Prerequisites:** [06 - HTTP/HTTPS & REST APIs Explained](../06-http-https-and-rest-apis/README.md), [04 - Scalability Basics: Vertical vs Horizontal Scaling](../../Module-01-Foundations/04-scalability-basics-vertical-vs-horizontal-scaling/README.md)
 
 ## Learning Objectives
 

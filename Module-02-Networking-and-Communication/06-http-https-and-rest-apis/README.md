@@ -1,8 +1,6 @@
 # HTTP/HTTPS & REST APIs Explained
 
 **Difficulty:** Beginner/Intermediate
-**Estimated length:** 12-15 min
-**Prerequisites:** [03 - Client-Server Architecture and How the Internet Works](../../Module-01-Foundations/03-client-server-architecture-and-how-the-internet-works/README.md), [04 - Scalability Basics: Vertical vs Horizontal Scaling](../../Module-01-Foundations/04-scalability-basics-vertical-vs-horizontal-scaling/README.md)
 
 ## Learning Objectives
 

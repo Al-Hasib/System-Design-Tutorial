@@ -1,8 +1,6 @@
 # Event-Driven Architecture
 
 **Difficulty:** Intermediate/Advanced
-**Estimated video length:** 15-19 min
-**Prerequisites:** [21 - Publish-Subscribe Pattern](../21-publish-subscribe-pattern/README.md), [20 - Message Queues Explained: Kafka vs RabbitMQ](../20-message-queues-kafka-vs-rabbitmq/README.md)
 
 ## Learning Objectives
 

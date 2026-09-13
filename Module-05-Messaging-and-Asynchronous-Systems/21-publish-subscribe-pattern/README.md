@@ -1,8 +1,6 @@
 # Publish-Subscribe Pattern
 
 **Difficulty:** Intermediate
-**Estimated video length:** 12-16 min
-**Prerequisites:** [20 - Message Queues Explained: Kafka vs RabbitMQ](../20-message-queues-kafka-vs-rabbitmq/README.md)
 
 ## Learning Objectives
 

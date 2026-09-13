@@ -1,8 +1,6 @@
 # Batch Processing vs Stream Processing
 
 **Difficulty:** Intermediate/Advanced
-**Estimated video length:** 14-18 min
-**Prerequisites:** [22 - Event-Driven Architecture](../22-event-driven-architecture/README.md), [20 - Message Queues Explained: Kafka vs RabbitMQ](../20-message-queues-kafka-vs-rabbitmq/README.md)
 
 ## Learning Objectives
 

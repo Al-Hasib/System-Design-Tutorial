@@ -1,8 +1,6 @@
 # Message Queues Explained: Kafka vs RabbitMQ
 
 **Difficulty:** Intermediate/Advanced
-**Estimated video length:** 16-20 min
-**Prerequisites:** [19 - Distributed Caching: Redis and Memcached](../../Module-04-Caching-and-Content-Delivery/19-distributed-caching-redis-and-memcached/README.md), [13 - Database Replication](../../Module-03-Databases-and-Storage/13-database-replication/README.md)
 
 ## Learning Objectives
 

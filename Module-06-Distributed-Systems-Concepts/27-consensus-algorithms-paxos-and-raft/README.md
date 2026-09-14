@@ -1,6 +1,6 @@
 # Consensus Algorithms: Paxos & Raft
 
-**Difficulty:** Advanced | **Estimated length:** 20-25 min | **Prerequisites:** [Circuit Breaker, Retry & Bulkhead Patterns](../26-circuit-breaker-retry-and-bulkhead-patterns/README.md), [Database Replication](../../Module-03-Databases-and-Storage/13-database-replication/README.md), [CAP Theorem and PACELC](../../Module-03-Databases-and-Storage/15-cap-theorem-and-pacelc/README.md)
+**Difficulty:** Advanced
 
 ## Learning Objectives
 

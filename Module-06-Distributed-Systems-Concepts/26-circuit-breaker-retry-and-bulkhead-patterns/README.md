@@ -1,6 +1,6 @@
 # Circuit Breaker, Retry & Bulkhead Patterns
 
-Difficulty: Advanced | Estimated length: 15-20 min | Prerequisites: [Rate Limiting Algorithms](../25-rate-limiting-algorithms/README.md), [Availability, Reliability and Fault Tolerance](../../Module-01-Foundations/05-availability-reliability-and-fault-tolerance/README.md)
+Difficulty: Advanced
 
 ## Learning Objectives
 

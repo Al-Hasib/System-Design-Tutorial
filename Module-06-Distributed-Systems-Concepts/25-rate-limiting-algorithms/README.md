@@ -1,6 +1,6 @@
 # Rate Limiting Algorithms (Token Bucket, Leaky Bucket, Sliding Window)
 
-**Difficulty:** Advanced | **Estimated length:** 15-20 min | **Prerequisites:** [API Gateway and BFF Pattern](../../Module-02-Networking-and-Communication/09-api-gateway-and-bff-pattern/README.md), [Distributed Caching: Redis and Memcached](../../Module-04-Caching-and-Content-Delivery/19-distributed-caching-redis-and-memcached/README.md)
+**Difficulty:** Advanced
 
 ## Learning Objectives
 

@@ -1,6 +1,6 @@
 # Data Consistency Models & Idempotency in Distributed Systems
 
-Difficulty: Advanced | Estimated length: 18-22 min | Prerequisites: [Distributed Transactions: Two-Phase Commit & Saga Pattern](../28-distributed-transactions-2pc-and-saga/README.md), [CAP Theorem and PACELC](../../Module-03-Databases-and-Storage/15-cap-theorem-and-pacelc/README.md), [Database Replication](../../Module-03-Databases-and-Storage/13-database-replication/README.md)
+Difficulty: Advanced
 
 ## Learning Objectives
 

@@ -1,6 +1,6 @@
 # Consistent Hashing Explained
 
-Difficulty: Advanced | Estimated length: 15-20 min | Prerequisites: [Database Sharding and Partitioning](../../Module-03-Databases-and-Storage/14-database-sharding-and-partitioning/README.md), [CAP Theorem and PACELC](../../Module-03-Databases-and-Storage/15-cap-theorem-and-pacelc/README.md)
+Difficulty: Advanced
 
 ## Learning Objectives
 

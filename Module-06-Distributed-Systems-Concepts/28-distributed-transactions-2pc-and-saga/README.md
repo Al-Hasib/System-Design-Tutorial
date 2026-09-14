@@ -1,6 +1,6 @@
 # Distributed Transactions: Two-Phase Commit & Saga Pattern
 
-**Difficulty:** Advanced | **Estimated length:** 18-22 min | **Prerequisites:** [Consensus Algorithms: Paxos & Raft](../27-consensus-algorithms-paxos-and-raft/README.md), [ACID vs BASE, Normalization vs Denormalization](../../Module-03-Databases-and-Storage/16-acid-vs-base-normalization-vs-denormalization/README.md), [Event-Driven Architecture](../../Module-05-Messaging-and-Asynchronous-Systems/22-event-driven-architecture/README.md)
+**Difficulty:** Advanced
 
 ## Learning Objectives
 

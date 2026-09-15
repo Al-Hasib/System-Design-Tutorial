@@ -1,8 +1,6 @@
 # Transport Protocols: TCP vs UDP & Where gRPC Fits
 
 **Difficulty:** Intermediate
-**Estimated length:** 14-18 min
-**Prerequisites:** [03 - Client-Server Architecture and How the Internet Works](../../Module-01-Foundations/03-client-server-architecture-and-how-the-internet-works/README.md), [06 - HTTP/HTTPS & REST APIs Explained](../../Module-02-Networking-and-Communication/06-http-https-and-rest-apis/README.md)
 
 ## Learning Objectives
 

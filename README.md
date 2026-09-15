@@ -5,6 +5,7 @@ A complete System Design course, structured as a 54-video YouTube playlist that 
 | File | Purpose |
 |---|---|
 | `README.md` | Full narration script — objectives, prerequisites, the talk track, key takeaways |
+| `why.md` | Why the topic exists — the problems that show up without it, how it solves them, and what it costs |
 | `notes.md` | Condensed study notes / cheat-sheet (definitions, comparison tables, numbers) |
 | `diagrams.md` | Mermaid diagrams visualizing the architecture or flow discussed |
 | `resources.md` | Curated further-reading links (official docs, papers, Wikipedia) |
@@ -143,6 +144,7 @@ Full mock interviews applying everything above to real "design X" problems: requ
 ## How to Use This Repo
 
 - **Recording a video?** Open that video's `README.md` — it's a full script with an intro hook, structured talking points, and an outro leading into the next video.
+- **Not sure why a topic matters?** Start with `why.md` — it lays out the concrete problems that appear when you don't have the concept, how it fixes each one, what it costs you in return, and when *not* to reach for it.
 - **Studying for an interview?** Skim `notes.md` and `quiz.md` across modules for a fast-revision path; Module 12's case studies are the best final rehearsal.
 - **Want visuals for the video/slides?** `diagrams.md` in each folder has ready-to-render Mermaid diagrams.
 - **Going deeper on a topic?** `resources.md` links to official docs and, where relevant, the original papers.

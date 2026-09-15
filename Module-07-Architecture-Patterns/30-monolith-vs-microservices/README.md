@@ -1,10 +1,6 @@
 # Monolith vs Microservices
 
 **Difficulty:** Intermediate/Advanced
-**Estimated length:** 15-18 min
-**Prerequisites:**
-- [04 - Scalability Basics: Vertical vs Horizontal Scaling](../../Module-01-Foundations/04-scalability-basics-vertical-vs-horizontal-scaling/README.md)
-- [09 - API Gateway and BFF Pattern](../../Module-02-Networking-and-Communication/09-api-gateway-and-bff-pattern/README.md)
 
 ## Learning Objectives
 

@@ -11,21 +11,21 @@
 
 ## Communication Styles Comparison
 
-| Aspect | Synchronous (REST/gRPC) | Asynchronous (Queue/Event) |
-|---|---|---|
-| Caller blocks? | Yes, waits for response | No, fire-and-forget or event publish |
-| Coupling | Tighter — callee's availability affects caller | Looser — decoupled in time |
-| Use case | Need an immediate answer (e.g., check stock) | Reacting to something that happened (e.g., send email) |
-| Failure handling | Needs timeouts/retries/circuit breakers | Broker buffers messages; consumer catches up later |
-| Consistency | Easier to reason about immediate state | Eventual consistency across services |
+| Aspect           | Synchronous (REST/gRPC)                         | Asynchronous (Queue/Event)                             |
+| ---------------- | ----------------------------------------------- | ------------------------------------------------------ |
+| Caller blocks?   | Yes, waits for response                         | No, fire-and-forget or event publish                   |
+| Coupling         | Tighter — callee's availability affects caller | Looser — decoupled in time                            |
+| Use case         | Need an immediate answer (e.g., check stock)    | Reacting to something that happened (e.g., send email) |
+| Failure handling | Needs timeouts/retries/circuit breakers         | Broker buffers messages; consumer catches up later     |
+| Consistency      | Easier to reason about immediate state          | Eventual consistency across services                   |
 
 ## Service Discovery Patterns Comparison
 
-| Pattern | Who does the lookup | Example tech | Pros | Cons |
-|---|---|---|---|---|
-| Client-side discovery | The calling service queries the registry and picks an instance | Netflix Eureka + Ribbon | Full client control over load balancing | Discovery logic duplicated in every client/language |
-| Server-side discovery | A load balancer/router queries the registry on the client's behalf | Kubernetes Services, AWS ELB | Clients stay simple, no discovery logic needed | Extra network hop; LB is critical infra |
-| Service mesh | Sidecar proxies handle discovery transparently | Istio, Linkerd (Envoy sidecars) | Centralizes discovery, LB, retries, security, observability | High operational complexity to run the mesh itself |
+| Pattern               | Who does the lookup                                                | Example tech                    | Pros                                                        | Cons                                                |
+| --------------------- | ------------------------------------------------------------------ | ------------------------------- | ----------------------------------------------------------- | --------------------------------------------------- |
+| Client-side discovery | The calling service queries the registry and picks an instance     | Netflix Eureka + Ribbon         | Full client control over load balancing                     | Discovery logic duplicated in every client/language |
+| Server-side discovery | A load balancer/router queries the registry on the client's behalf | Kubernetes Services, AWS ELB    | Clients stay simple, no discovery logic needed              | Extra network hop; LB is critical infra             |
+| Service mesh          | Sidecar proxies handle discovery transparently                     | Istio, Linkerd (Envoy sidecars) | Centralizes discovery, LB, retries, security, observability | High operational complexity to run the mesh itself  |
 
 ## Service Registry Lifecycle
 

@@ -1,11 +1,6 @@
 # Microservices Communication & Service Discovery
 
 **Difficulty:** Advanced
-**Estimated length:** 16-20 min
-**Prerequisites:**
-- [30 - Monolith vs Microservices](../30-monolith-vs-microservices/README.md)
-- [09 - API Gateway and BFF Pattern](../../Module-02-Networking-and-Communication/09-api-gateway-and-bff-pattern/README.md)
-- [20 - Message Queues: Kafka vs RabbitMQ](../../Module-05-Messaging-and-Asynchronous-Systems/20-message-queues-kafka-vs-rabbitmq/README.md)
 
 ## Learning Objectives
 

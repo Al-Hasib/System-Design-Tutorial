@@ -1,8 +1,6 @@
 # LSM Trees vs. B-Trees: Storage Engine Internals
 
 **Difficulty:** Advanced
-**Estimated length:** 14-18 min
-**Prerequisites:** [12 - Database Indexing Explained](../../Module-03-Databases-and-Storage/12-database-indexing-explained/README.md), [11 - SQL vs NoSQL](../../Module-03-Databases-and-Storage/11-sql-vs-nosql/README.md)
 
 ## Learning Objectives
 

@@ -11,6 +11,7 @@ flowchart LR
     Split -->|Yes| SP[Split page, rebalance tree]
     Split -->|No| Done[Write complete]
 ```
+
 *Every write requires finding the specific page holding that key, then modifying it in place — a random-access operation that can occur anywhere on disk.*
 
 ## 2. LSM Tree Write Path: Append Only
@@ -23,6 +24,7 @@ flowchart LR
     Full -->|Yes| Flush["Flush as new immutable SSTable<br/>(sequential write to disk)"]
     Full -->|No| Done[Write complete]
 ```
+
 *Every write is a sequential append — to the write-ahead log and the in-memory memtable — with no seeking to a specific disk location required.*
 
 ## 3. LSM Tree Read Path and Compaction
@@ -41,4 +43,5 @@ flowchart TB
         Merge --> C3[New, larger SSTable]
     end
 ```
+
 *A read checks the memtable, then SSTables from newest to oldest, using Bloom filters to skip SSTables that provably don't contain the key. Compaction runs in the background, merging SSTables and discarding stale/deleted data to keep read amplification and space usage in check.*

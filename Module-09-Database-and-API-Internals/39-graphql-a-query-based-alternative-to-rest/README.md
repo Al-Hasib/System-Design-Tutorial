@@ -1,8 +1,6 @@
 # GraphQL: A Query-Based Alternative to REST
 
 **Difficulty:** Intermediate
-**Estimated length:** 12-15 min
-**Prerequisites:** [06 - HTTP/HTTPS & REST APIs Explained](../../Module-02-Networking-and-Communication/06-http-https-and-rest-apis/README.md), [09 - API Gateway & Backend-for-Frontend Pattern](../../Module-02-Networking-and-Communication/09-api-gateway-and-bff-pattern/README.md)
 
 ## Learning Objectives
 

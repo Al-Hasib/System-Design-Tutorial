@@ -1,8 +1,6 @@
 # Distributed Locking: Redlock, ZooKeeper & etcd
 
 **Difficulty:** Advanced
-**Estimated length:** 14-18 min
-**Prerequisites:** [27 - Consensus Algorithms: Paxos and Raft](../../Module-06-Distributed-Systems-Concepts/27-consensus-algorithms-paxos-and-raft/README.md), [19 - Distributed Caching with Redis & Memcached](../../Module-04-Caching-and-Content-Delivery/19-distributed-caching-redis-and-memcached/README.md)
 
 ## Learning Objectives
 

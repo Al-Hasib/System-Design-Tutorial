@@ -15,6 +15,7 @@ flowchart TB
         Q --> Resolve[Server resolves all three fields<br/>and returns one combined response]
     end
 ```
+
 *Assembling data from multiple resources for one screen costs multiple REST round trips, or one GraphQL query that specifies the whole combined shape upfront.*
 
 ## 2. The N+1 Query Problem and Batching
@@ -31,6 +32,7 @@ flowchart TB
         B1 --> B2["1 batched query:<br/>fetch orders WHERE user_id IN (20 ids)"]
     end
 ```
+
 *Naive per-field resolvers can trigger one query per item in a list. Batching collects all requests for the same data type within one query execution into a single call.*
 
 ## 3. Where Each API Style Fits
@@ -45,4 +47,5 @@ flowchart LR
     Partner[Third-Party Partner<br/>needs simple, cacheable access] --> REST[REST API]
     REST --> Schema2[(Fixed-Shape Resources)]
 ```
+
 *Multiple client types with different, evolving data needs share one GraphQL schema efficiently; a single external partner needing simple, cacheable, well-documented access is often still better served by REST.*

@@ -1,10 +1,6 @@
 # Domain-Driven Design Basics for System Design
 
 **Difficulty:** Advanced
-**Estimated length:** 14-18 min
-**Prerequisites:**
-- [30 - Monolith vs Microservices](../30-monolith-vs-microservices/README.md)
-- [31 - Microservices Communication & Service Discovery](../31-microservices-communication-and-service-discovery/README.md)
 
 ## Learning Objectives
 

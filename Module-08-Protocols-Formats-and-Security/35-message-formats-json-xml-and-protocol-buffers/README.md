@@ -1,8 +1,6 @@
 # Message Formats: JSON, XML & Protocol Buffers
 
 **Difficulty:** Intermediate
-**Estimated length:** 12-15 min
-**Prerequisites:** [06 - HTTP/HTTPS & REST APIs Explained](../../Module-02-Networking-and-Communication/06-http-https-and-rest-apis/README.md), [33 - Transport Protocols: TCP vs UDP & Where gRPC Fits](../33-transport-protocols-tcp-udp-and-grpc/README.md)
 
 ## Learning Objectives
 

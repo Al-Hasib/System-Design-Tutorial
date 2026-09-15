@@ -1,8 +1,6 @@
 # Transaction Isolation Levels & Concurrency Control: Locking vs. MVCC
 
 **Difficulty:** Advanced
-**Estimated length:** 16-20 min
-**Prerequisites:** [16 - ACID vs BASE, Normalization vs Denormalization](../../Module-03-Databases-and-Storage/16-acid-vs-base-normalization-vs-denormalization/README.md), [13 - Database Replication](../../Module-03-Databases-and-Storage/13-database-replication/README.md)
 
 ## Learning Objectives
 

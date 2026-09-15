@@ -1,8 +1,6 @@
 # Security Fundamentals: TLS, Encryption, AuthN/AuthZ & Firewalls
 
 **Difficulty:** Intermediate/Advanced
-**Estimated length:** 16-20 min
-**Prerequisites:** [06 - HTTP/HTTPS & REST APIs Explained](../../Module-02-Networking-and-Communication/06-http-https-and-rest-apis/README.md), [09 - API Gateway & Backend-for-Frontend Pattern](../../Module-02-Networking-and-Communication/09-api-gateway-and-bff-pattern/README.md), [31 - Microservices Communication and Service Discovery](../../Module-07-Architecture-Patterns/31-microservices-communication-and-service-discovery/README.md)
 
 ## Learning Objectives
 

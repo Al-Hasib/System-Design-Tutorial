@@ -1,8 +1,6 @@
 # Web Server Internals: Concurrency, Threading & Content Serving
 
 **Difficulty:** Intermediate
-**Estimated length:** 14-18 min
-**Prerequisites:** [07 - Load Balancing Explained](../../Module-02-Networking-and-Communication/07-load-balancing-explained/README.md), [08 - Forward Proxy vs Reverse Proxy](../../Module-02-Networking-and-Communication/08-forward-proxy-vs-reverse-proxy/README.md)
 
 ## Learning Objectives
 

@@ -16,6 +16,7 @@ flowchart TB
         D1["Hash 'banana' - positions 2, 7, 9"] --> D2["Bit 7 is 0 - definitely NOT present"]
     end
 ```
+
 *Adding an element only ever sets bits — checking membership relies on all relevant bits being set. One zero bit proves absence with certainty; all-ones only proves probable presence.*
 
 ## 2. HyperLogLog: Estimating Cardinality from Leading Zeros
@@ -28,6 +29,7 @@ flowchart LR
     Track --> Combine["Combine all buckets' max values<br/>via averaging formula"]
     Combine --> Estimate["Final cardinality estimate<br/>(~1-2% error, kilobytes of memory)"]
 ```
+
 *Longer runs of leading zeros in observed hash values are statistical evidence of having hashed more distinct items — HyperLogLog turns that statistic into a compact cardinality estimate.*
 
 ## 3. Count-Min Sketch: Estimating Frequency
@@ -47,4 +49,5 @@ flowchart TB
     V3 --> Min
     Min --> Result["Estimated frequency: 40<br/>(closest to true value, since collisions only inflate)"]
 ```
+
 *Each hash function points to a different row's counter for the same item; taking the minimum across all of them filters out the inflation caused by collisions with other items, since collisions can only ever increase a counter, never decrease it.*

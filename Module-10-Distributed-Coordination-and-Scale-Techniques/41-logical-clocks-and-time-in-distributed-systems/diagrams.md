@@ -15,6 +15,7 @@ sequenceDiagram
     P2->>P1: Message (carries counter = 3)
     Note over P1: Receives message, counter = max(1,3)+1 = 4
 ```
+
 *Every local event increments a process's own counter; receiving a message bumps the counter above both the local and received values — guaranteeing any causally-earlier event gets a smaller number.*
 
 ## 2. Vector Clocks: Detecting True Concurrency
@@ -32,6 +33,7 @@ flowchart TB
         R2["Neither dominates the other - C and D are concurrent (a real conflict)"]
     end
 ```
+
 *If one vector dominates the other in every slot, the events are causally ordered. If neither dominates, the events happened independently — a genuine conflict, not something a single "which came first" answer can resolve.*
 
 ## 3. Vector Clocks Resolving a Shopping Cart Conflict
@@ -49,4 +51,5 @@ sequenceDiagram
     EU->>EU: Compare [1,0] vs [0,1] - neither dominates - CONCURRENT
     EU->>EU: Merge both updates instead of picking one via timestamp
 ```
+
 *Because neither write's vector clock dominates the other, the system correctly identifies this as a genuine conflict and merges both changes rather than silently discarding one based on an untrustworthy wall-clock timestamp.*

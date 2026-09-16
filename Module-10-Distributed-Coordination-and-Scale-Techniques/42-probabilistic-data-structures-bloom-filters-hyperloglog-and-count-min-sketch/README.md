@@ -1,8 +1,6 @@
 # Probabilistic Data Structures: Bloom Filters, HyperLogLog & Count-Min Sketch
 
 **Difficulty:** Advanced
-**Estimated length:** 14-18 min
-**Prerequisites:** [24 - Consistent Hashing Explained](../../Module-06-Distributed-Systems-Concepts/24-consistent-hashing-explained/README.md), [19 - Distributed Caching with Redis & Memcached](../../Module-04-Caching-and-Content-Delivery/19-distributed-caching-redis-and-memcached/README.md)
 
 ## Learning Objectives
 

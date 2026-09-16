@@ -11,28 +11,29 @@
 
 ## Lamport Timestamps vs. Vector Clocks
 
-| | Lamport Timestamps | Vector Clocks |
-|---|---|---|
-| Structure | Single counter per process | Array of counters, one per process |
-| Guarantees | If A happened-before B, then timestamp(A) < timestamp(B) | Can determine happened-before AND detect true concurrency |
-| Limitation | Cannot distinguish concurrent (unrelated) events from causally ordered ones | Higher overhead — size grows with number of processes |
-| Typical use | Basic event ordering, simple distributed logging | Conflict detection in multi-replica systems (e.g., Dynamo, Riak) |
+|             | Lamport Timestamps                                                          | Vector Clocks                                                    |
+| ----------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Structure   | Single counter per process                                                  | Array of counters, one per process                               |
+| Guarantees  | If A happened-before B, then timestamp(A) < timestamp(B)                    | Can determine happened-before AND detect true concurrency        |
+| Limitation  | Cannot distinguish concurrent (unrelated) events from causally ordered ones | Higher overhead — size grows with number of processes           |
+| Typical use | Basic event ordering, simple distributed logging                            | Conflict detection in multi-replica systems (e.g., Dynamo, Riak) |
 
 ## Vector Clock Comparison Rules
 
 Given vectors A and B:
+
 - **A happened-before B** if every element of A ≤ corresponding element of B, and at least one is strictly less.
 - **A and B are concurrent** if neither dominates the other (some elements higher in A, others higher in B) — this is the signal for a genuine conflict.
 
 ## When to Use Physical Time vs. Logical/Vector Clocks
 
-| Use case | Right tool |
-|---|---|
-| Log timestamps for human debugging | Physical (NTP) time |
-| Cache TTL / expiration windows | Physical (NTP) time — approximate precision is fine |
-| Rate-limiting windows | Physical (NTP) time |
-| Ordering causally-related events for correctness | Lamport timestamps |
-| Detecting conflicting concurrent writes across replicas | Vector clocks |
+| Use case                                                | Right tool                                           |
+| ------------------------------------------------------- | ---------------------------------------------------- |
+| Log timestamps for human debugging                      | Physical (NTP) time                                  |
+| Cache TTL / expiration windows                          | Physical (NTP) time — approximate precision is fine |
+| Rate-limiting windows                                   | Physical (NTP) time                                  |
+| Ordering causally-related events for correctness        | Lamport timestamps                                   |
+| Detecting conflicting concurrent writes across replicas | Vector clocks                                        |
 
 ## Key Numbers / Facts
 

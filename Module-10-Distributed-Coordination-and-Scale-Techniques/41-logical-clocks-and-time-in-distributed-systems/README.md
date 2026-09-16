@@ -1,8 +1,6 @@
 # Logical Clocks & Time in Distributed Systems
 
 **Difficulty:** Advanced
-**Estimated length:** 14-18 min
-**Prerequisites:** [13 - Database Replication](../../Module-03-Databases-and-Storage/13-database-replication/README.md), [29 - Data Consistency Models & Idempotency](../../Module-06-Distributed-Systems-Concepts/29-data-consistency-models-and-idempotency/README.md)
 
 ## Learning Objectives
 

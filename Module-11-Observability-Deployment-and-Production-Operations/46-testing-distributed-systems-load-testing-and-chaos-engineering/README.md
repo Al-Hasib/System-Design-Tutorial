@@ -1,8 +1,6 @@
 # Testing Distributed Systems: Load Testing & Chaos Engineering
 
 **Difficulty:** Advanced
-**Estimated length:** 14-18 min
-**Prerequisites:** [43 - Observability: Logging, Metrics & Distributed Tracing](../43-observability-logging-metrics-and-distributed-tracing/README.md), [26 - Circuit Breaker, Retry & Bulkhead Patterns](../../Module-06-Distributed-Systems-Concepts/26-circuit-breaker-retry-and-bulkhead-patterns/README.md)
 
 ## Learning Objectives
 

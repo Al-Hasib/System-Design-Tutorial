@@ -12,6 +12,7 @@ flowchart TB
     Metrics --> Dash["Dashboards + Alerting<br/>(Prometheus, Grafana)"]
     Traces --> TraceUI["Trace visualization<br/>(Jaeger, Zipkin)"]
 ```
+
 *Each pillar captures a different dimension of system behavior — none of them alone gives a complete picture of a distributed system.*
 
 ## 2. Distributed Trace Across Microservices
@@ -33,6 +34,7 @@ sequenceDiagram
     Checkout-->>GW: Response
     GW-->>Client: Response
 ```
+
 *The same trace ID (abc-123) is propagated through every service call, letting a tracing tool reconstruct the full path and immediately show that the Payment Service's span accounted for nearly all of the request's latency.*
 
 ## 3. Alerting on Symptoms, Not Every Internal Cause
@@ -51,4 +53,5 @@ flowchart LR
     Alert --> OnCall[On-call engineer paged]
     OnCall --> Investigate["Investigate using logs/metrics/traces<br/>to find the actual root cause"]
 ```
+
 *Alerting directly on user-facing symptoms (not every possible internal cause) keeps the signal-to-noise ratio high — the actual root cause is found afterward, during investigation, using the other observability pillars.*

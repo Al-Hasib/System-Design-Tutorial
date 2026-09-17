@@ -11,26 +11,26 @@
 
 ## Active-Passive vs. Active-Active
 
-| Aspect | Active-Passive | Active-Active |
-|---|---|---|
-| Traffic serving | One region at a time | All regions simultaneously |
-| Idle capacity cost | Standby region mostly unused | None — all capacity does real work |
-| Failover delay | Real (DNS propagation, warm-up, verification) | None — no single active region to fail over from |
-| Consistency challenge | Simpler — single write region at a time | Must confront CAP/PACELC trade-offs on cross-region writes |
-| Best fit | Lower RTO tolerance is acceptable (minutes) | Very low RTO requirement, near-zero downtime |
+| Aspect                | Active-Passive                                | Active-Active                                              |
+| --------------------- | --------------------------------------------- | ---------------------------------------------------------- |
+| Traffic serving       | One region at a time                          | All regions simultaneously                                 |
+| Idle capacity cost    | Standby region mostly unused                  | None — all capacity does real work                        |
+| Failover delay        | Real (DNS propagation, warm-up, verification) | None — no single active region to fail over from          |
+| Consistency challenge | Simpler — single write region at a time      | Must confront CAP/PACELC trade-offs on cross-region writes |
+| Best fit              | Lower RTO tolerance is acceptable (minutes)   | Very low RTO requirement, near-zero downtime               |
 
 ## RTO / RPO Drive Architecture
 
-| RPO requirement | Replication strategy |
-|---|---|
-| Zero data loss | Synchronous cross-region replication (real latency cost on every write) |
-| A few minutes acceptable | Asynchronous replication (faster, cheaper day-to-day) |
+| RPO requirement          | Replication strategy                                                    |
+| ------------------------ | ----------------------------------------------------------------------- |
+| Zero data loss           | Synchronous cross-region replication (real latency cost on every write) |
+| A few minutes acceptable | Asynchronous replication (faster, cheaper day-to-day)                   |
 
-| RTO requirement | Architecture |
-|---|---|
-| Seconds | Active-active (no failover delay) |
-| Minutes | Active-passive with automated failover |
-| Hours | Documented manual recovery from backups may be acceptable |
+| RTO requirement | Architecture                                              |
+| --------------- | --------------------------------------------------------- |
+| Seconds         | Active-active (no failover delay)                         |
+| Minutes         | Active-passive with automated failover                    |
+| Hours           | Documented manual recovery from backups may be acceptable |
 
 ## Key Principle
 

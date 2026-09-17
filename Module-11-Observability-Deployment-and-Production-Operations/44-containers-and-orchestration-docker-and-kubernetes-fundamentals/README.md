@@ -1,8 +1,6 @@
 # Containers & Orchestration: Docker & Kubernetes Fundamentals
 
 **Difficulty:** Intermediate
-**Estimated length:** 16-20 min
-**Prerequisites:** [34 - Web Server Internals: Concurrency, Threading & Content Serving](../../Module-08-Protocols-Formats-and-Security/34-web-server-internals-concurrency-and-content-serving/README.md), [07 - Load Balancing Explained](../../Module-02-Networking-and-Communication/07-load-balancing-explained/README.md)
 
 ## Learning Objectives
 

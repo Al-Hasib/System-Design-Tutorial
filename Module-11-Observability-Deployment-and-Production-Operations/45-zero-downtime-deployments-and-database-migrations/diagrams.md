@@ -20,6 +20,7 @@ flowchart TB
         C2 --> C3["v2: 100% traffic<br/>v1: 0% traffic"]
     end
 ```
+
 *Rolling replaces instances gradually with roughly constant capacity; blue-green cuts over atomically between two full environments; canary ramps up new-version traffic gradually while watching for problems.*
 
 ## 2. Why Old and New Versions Must Stay Compatible Mid-Rollout
@@ -37,6 +38,7 @@ sequenceDiagram
     New->>DB: Read/write using v2's expected schema
     Note over Old,New: Both versions hit the SAME database simultaneously during rollout
 ```
+
 *During any rolling or canary rollout, both old and new instances query the same shared database at the same time — a schema change must work correctly for both versions, or one of them starts failing mid-deploy.*
 
 ## 3. Expand-Contract Pattern for a Database Migration
@@ -47,4 +49,5 @@ flowchart LR
     S2 --> S3["Step 3: Contract<br/>Stop writing 'name';<br/>reads fully use 'full_name'"]
     S3 --> S4["Step 4: Cleanup<br/>Drop unused 'name' column<br/>(separate, later migration)"]
 ```
+
 *Each step is independently safe for any mix of old and new application instances running simultaneously — the risky move is skipping straight from step 1 to step 4 in one deploy.*

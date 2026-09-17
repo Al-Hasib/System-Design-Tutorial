@@ -14,6 +14,7 @@ flowchart TB
         F --> P2["Region B (now Active)<br/>Serving all traffic"]
     end
 ```
+
 *Under normal operation, Region B sits idle with replicated data. After a failure, traffic is redirected to it — but that redirection itself takes time, which RTO defines an acceptable limit for.*
 
 ## 2. Active-Active: Every Region Serves Traffic
@@ -26,6 +27,7 @@ flowchart TB
 
     Note["If Region A fails,<br/>Region B simply absorbs its traffic<br/>- no failover delay"]
 ```
+
 *Both regions serve traffic simultaneously, routed by proximity — if one fails, there's no single point that needs to "take over," but writes accepted in both places must be reconciled.*
 
 ## 3. RTO and RPO on a Timeline
@@ -35,4 +37,5 @@ flowchart LR
     LastBackup["Last successful<br/>replicated write"] -->|"RPO window<br/>(max acceptable data loss)"| Disaster["Disaster occurs"]
     Disaster -->|"RTO window<br/>(max acceptable downtime)"| Recovered["System back online,<br/>serving traffic again"]
 ```
+
 *RPO measures backward from the disaster — how much recent data could be lost. RTO measures forward from the disaster — how long until service is restored. Both are business-defined targets that drive the actual architecture choice.*

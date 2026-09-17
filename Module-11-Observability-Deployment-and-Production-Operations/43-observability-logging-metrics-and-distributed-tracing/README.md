@@ -1,8 +1,6 @@
 # Observability: Logging, Metrics & Distributed Tracing
 
 **Difficulty:** Intermediate
-**Estimated length:** 14-18 min
-**Prerequisites:** [07 - Load Balancing Explained](../../Module-02-Networking-and-Communication/07-load-balancing-explained/README.md), [30 - Monolith vs Microservices](../../Module-07-Architecture-Patterns/30-monolith-vs-microservices/README.md)
 
 ## Learning Objectives
 

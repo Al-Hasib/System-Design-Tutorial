@@ -11,6 +11,7 @@
 ## The Problems It Solves
 
 ### 1. Environment drift between development, CI, and production
+
 **What you see:** Code that passes tests and fails in production for reasons unrelated to the code.
 
 **Why it happens:** The runtime environment is assembled separately in each place, by different mechanisms, and drifts.
@@ -18,6 +19,7 @@
 **How containers solve it:** The image bundles the application with its entire userland — libraries, runtime, system packages, configuration. The artifact that passed tests is bit-for-bit the artifact that runs in production. This single property eliminates an entire category of incident and is why containers won.
 
 ### 2. Poor utilization from server-per-application isolation
+
 **What you see:** Dozens of mostly idle machines, provisioned individually because applications cannot safely share a host.
 
 **Why it happens:** Without process-level isolation, applications conflict over dependencies, ports, and resources.
@@ -25,6 +27,7 @@
 **How containers solve it:** Namespaces and cgroups give isolation at a fraction of a virtual machine's cost — no guest OS, startup in milliseconds instead of minutes, with CPU and memory limits enforced per container. Many workloads pack onto one host safely, and utilization goes from single digits to something defensible.
 
 ### 3. Manual operations that do not scale and do not happen at 3 a.m.
+
 **What you see:** Crashed processes staying down until someone notices. Scaling that requires a human. A dead host that takes hours to drain because nobody has a runbook.
 
 **Why it happens:** There is no control loop — only people.
@@ -32,6 +35,7 @@
 **How Kubernetes solves it:** You declare the desired state ("five replicas of this image, with these resource limits, behind this service"), and controllers continuously reconcile reality toward it. A container dies, it is restarted. A host dies, its pods are rescheduled elsewhere. Health checks remove unhealthy pods from the service automatically. This shift from *imperative steps* to *declarative desired state with a reconciliation loop* is the core idea, and it is what turns operations from manual labor into a system.
 
 ### 4. Deployment, discovery, config, and scaling as four separate problems
+
 **What you see:** Rolling updates scripted by hand, service addresses managed in config files, secrets baked into images, and autoscaling glued together from cloud APIs.
 
 **Why it happens:** Each concern is solved separately with its own tooling.
@@ -51,12 +55,12 @@ Kubernetes is powerful and genuinely heavy, and this is the honest part:
 
 ## When You Need It — and When You Don't
 
-| Kubernetes when | Something simpler when |
-|---|---|
-| Many services, many teams, frequent deploys | A handful of services and one small team |
-| You need multi-cloud or on-prem portability | You are happy on one cloud's managed platform |
-| Workloads are heterogeneous with varied scaling profiles | The workload is uniform and predictable |
-| You have or can hire platform expertise | Nobody owns infrastructure full-time |
+| Kubernetes when                                          | Something simpler when                        |
+| -------------------------------------------------------- | --------------------------------------------- |
+| Many services, many teams, frequent deploys              | A handful of services and one small team      |
+| You need multi-cloud or on-prem portability              | You are happy on one cloud's managed platform |
+| Workloads are heterogeneous with varied scaling profiles | The workload is uniform and predictable       |
+| You have or can hire platform expertise                  | Nobody owns infrastructure full-time          |
 
 **Containers, though, are close to universally worth it** — even if you deploy them to a managed platform and never touch an orchestrator.
 
@@ -68,4 +72,4 @@ Deployment is often where a design discussion ends: "how do you run and scale th
 
 Orchestration is how **horizontal scaling** (topic 4) and **fault tolerance** (topic 5) are implemented in practice. It provides **service discovery** natively (topic 31) and **load balancing** through Services and Ingress (topic 7). Its control plane stores state in **etcd** and uses **consensus** and leader election (topics 27, 40). Rolling updates and readiness probes are the machinery of **zero-downtime deployment** (topic 45), and pod scheduling across zones is a building block of **multi-region architecture** (topic 47).
 
-**Next:** [Zero-Downtime Deployments & Database Migrations](../45-zero-downtime-deployments-and-database-migrations/why.md) — shipping changes without anyone noticing.
+**Next:** [Zero-Downtime Deployments &amp; Database Migrations](../45-zero-downtime-deployments-and-database-migrations/why.md) — shipping changes without anyone noticing.

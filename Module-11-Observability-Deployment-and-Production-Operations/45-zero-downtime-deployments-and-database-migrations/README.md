@@ -1,8 +1,6 @@
 # Zero-Downtime Deployments & Database Migrations
 
 **Difficulty:** Intermediate/Advanced
-**Estimated length:** 14-18 min
-**Prerequisites:** [44 - Containers and Orchestration: Docker and Kubernetes Fundamentals](../44-containers-and-orchestration-docker-and-kubernetes-fundamentals/README.md), [07 - Load Balancing Explained](../../Module-02-Networking-and-Communication/07-load-balancing-explained/README.md)
 
 ## Learning Objectives
 

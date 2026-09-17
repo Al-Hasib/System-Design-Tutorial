@@ -1,8 +1,6 @@
 # Multi-Region Architecture & Disaster Recovery
 
 **Difficulty:** Advanced
-**Estimated length:** 16-20 min
-**Prerequisites:** [05 - Availability, Reliability & Fault Tolerance](../../Module-01-Foundations/05-availability-reliability-and-fault-tolerance/README.md), [15 - CAP Theorem & PACELC](../../Module-03-Databases-and-Storage/15-cap-theorem-and-pacelc/README.md)
 
 ## Learning Objectives
 

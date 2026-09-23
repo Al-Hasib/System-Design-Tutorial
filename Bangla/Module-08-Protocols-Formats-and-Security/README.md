@@ -1,0 +1,12 @@
+# Module 8: Protocols, Formats & Security
+
+এখন পর্যন্ত প্রতিটা module চুপচাপ কিছু assumption-এর উপর নির্ভর করেছে যা আমরা কখনো পুরোপুরি খুলে দেখিনি: যে "network" নির্ভরযোগ্যভাবে byte নড়াচড়া করায়, যে একটা web server কোনোভাবে একসাথে হাজার হাজার client-কে serve করতে পারে, যে service-গুলো তাদের exchange করা data কীভাবে encode করবে তা নিয়ে একমত হয়, এবং এই সবকিছু কোনো attacker পথে পড়ে না পড়ে বা কিছু tamper না করে ঘটে। এই module আরও এক layer গভীরে গিয়ে সেই assumption-গুলোকে explicit করে। আমরা দেখব TCP এবং UDP আসলে কীভাবে আলাদা (এবং এগুলোর উপরে gRPC কোথায় বসে), concurrent load-এর নিচে একটা web server process-এর ভেতরে আসলে কী ঘটছে, JSON, XML, এবং Protocol Buffers কীভাবে readability-কে bandwidth-এর বিপরীতে trade off করে, এবং প্রতিটা backend engineer-এর toolkit-এ থাকা উচিত এমন security fundamental — encryption, authentication, authorization, এবং network defense। এর কোনোটাই আগের module-গুলোর জায়গা নেয় না; এটা সেগুলোর নিচের substrate, এবং এটাই ঠিক সেই "এটা আসলে কেন কাজ করে" জ্ঞান যা একজন framework operate করতে পারা মানুষ আর যে system-টার উপর সেটা বানানো তা বোঝা মানুষের মধ্যে পার্থক্য তৈরি করে।
+
+## এই Module-এর Video সমূহ
+
+| # | Title | Description | Link |
+|---|-------|-------------|------|
+| 33 | Transport Protocols: TCP vs UDP & Where gRPC Fits | TCP-এর reliability guarantee আসলে কী খরচ করে, কেন UDP speed-এর জন্য reliability ছাড় দেয়, এবং gRPC কীভাবে HTTP/2-এর উপরে একটা আধুনিক RPC framework তৈরি করে। | [33-transport-protocols-tcp-udp-and-grpc](33-transport-protocols-tcp-udp-and-grpc/README.md) |
+| 34 | Web Server Internals: Concurrency, Threading & Content Serving | একটা web server আসলে কীভাবে হাজার হাজার simultaneous connection handle করে — thread, event loop, এবং static ও dynamic content serve করার মধ্যে পার্থক্য। | [34-web-server-internals-concurrency-and-content-serving](34-web-server-internals-concurrency-and-content-serving/README.md) |
+| 35 | Message Formats: JSON, XML & Protocol Buffers | Service-গুলো তাদের exchange করা data-এর shape নিয়ে কীভাবে একমত হয়, এবং human-readable ও binary serialization format-এর মধ্যে real trade-off। | [35-message-formats-json-xml-and-protocol-buffers](35-message-formats-json-xml-and-protocol-buffers/README.md) |
+| 36 | Security Fundamentals: TLS, Encryption, AuthN/AuthZ & Firewalls | প্রতিটা backend system-এর দরকার এমন security building block — encryption, authentication বনাম authorization, এবং service-কে নিরাপদ রাখা network defense। | [36-security-fundamentals-tls-encryption-auth-and-firewalls](36-security-fundamentals-tls-encryption-auth-and-firewalls/README.md) |

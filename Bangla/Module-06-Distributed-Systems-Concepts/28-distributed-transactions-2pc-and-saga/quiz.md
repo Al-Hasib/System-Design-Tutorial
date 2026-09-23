@@ -1,0 +1,42 @@
+# Practice ও Interview প্রশ্ন
+
+**১. একটি distributed transaction কী, এবং একটি transaction যখন দুটি স্বাধীন service বা database জুড়ে বিস্তৃত হয়, তখন একটি সাধারণ ACID transaction কেন ব্যবহার করা যায় না?**
+একটি distributed transaction হলো একটি কাজের একক যা একটি অনির্ভরযোগ্য network-এর মাধ্যমে coordinate করা দুই বা ততোধিক স্বাধীনভাবে ব্যর্থ হতে পারা resource জুড়ে অবশ্যই atomic হতে হবে। সাধারণ ACID transaction একটি একক transaction manager-এর উপর নির্ভর করে যার জড়িত সব data-এর lock এবং একটি commit log-এর উপর সরাসরি, synchronous নিয়ন্ত্রণ থাকে — সাধারণত একটি database engine-এর মধ্যে। একবার "transaction" একটি service বা network boundary অতিক্রম করলে, কোনো একক component-এর সেই shared নিয়ন্ত্রণ থাকে না, তাই atomicity-কে অবশ্যই explicitly একটি protocol (2PC)-এর মাধ্যমে coordinate করতে হবে অথবা eventual consistency-র চারপাশে পুনর্ডিজাইন করতে হবে (Saga)।
+
+**২. Two-Phase Commit-এর দুটি phase ধাপে ধাপে ব্যাখ্যা করুন। একটি participant যখন "হ্যাঁ" vote দেয়, তখন সে ঠিক কী করে?**
+- Phase 1 (Prepare/Vote): coordinator প্রতিটি participant-কে prepare করতে বলে; প্রতিটি participant commit করার জন্য প্রয়োজনীয় সব কাজ করে (lock গ্রহণ করে, constraint যাচাই করে) এবং vote দিয়ে উত্তর দেওয়ার আগে durably একটি "prepared" record log করে।
+- Phase 2 (Commit/Abort): যদি সব vote "হ্যাঁ" হয়, coordinator সবাইকে commit করতে বলে; যদি কোনো vote "না" হয় (বা timeout হয়), এটি সবাইকে abort করতে বলে।
+- "হ্যাঁ" vote দেওয়া একটি durable প্রতিশ্রুতি: participant-কে অবশ্যই যাই ঘটুক না কেন পরে commit করতে সক্ষম হতে হবে, এমনকি নিজের crash এবং restart-এর মধ্য দিয়েও, যতক্ষণ না সে চূড়ান্ত সিদ্ধান্ত শোনে।
+
+**৩. 2PC-কে কেন একটি blocking protocol বলে বিবেচনা করা হয়, এবং coordinator যদি Prepare পাঠানোর পরে কিন্তু Commit পাঠানোর আগে crash করে তাহলে কী ঘটে?**
+এটি blocking কারণ একটি participant যে "হ্যাঁ" vote দিয়েছে সে একতরফাভাবে commit বা abort করার সিদ্ধান্ত নিতে পারে না — এটি করলে অন্যান্য participant-কে যা বলা হয়েছিল তার সাথে দ্বিমত হওয়ার ঝুঁকি থাকে। যদি coordinator vote সংগ্রহ করার পরে কিন্তু সিদ্ধান্ত broadcast করার আগে crash করে, তাহলে প্রতিটি participant "prepared" state-এ আটকে থাকে, live data-র উপর lock ধরে রাখে, যতক্ষণ না coordinator পুনরুদ্ধার হয় (অথবা একজন মানুষ/heuristic হস্তক্ষেপ করে)। এটি সরাসরি availability কমিয়ে দেয়, যা 2PC-র মূল সমালোচনা।
+
+**৪. XA কী, এবং এটি 2PC-র সাথে কীভাবে সম্পর্কিত?**
+XA হলো X/Open standard interface যা একটি transaction manager-কে একাধিক XA-compliant "resource manager" জুড়ে একটি two-phase commit coordinate করতে দেয় — উদাহরণস্বরূপ, দুটি relational database, বা একটি database এবং একটি message queue। এটি বেশিরভাগ production 2PC implementation-এর (যেমন, Java-র JTA) পেছনের mechanism, যা ভিন্ন ভিন্ন ধরনের resource-কে একটি atomic distributed transaction-এ অংশগ্রহণ করতে দেয়।
+
+**৫. Saga pattern সংজ্ঞায়িত করুন এবং একটি compensating transaction কী তা ব্যাখ্যা করুন। একটি compensating transaction কেন rollback-এর মতো নয়?**
+একটি saga হলো local transaction-এর একটি sequence, প্রতিটি স্বাধীনভাবে committed, যেখানে যেকোনো step-এ একটি failure ইতিমধ্যে সম্পন্ন হওয়া step-গুলোর জন্য compensating transaction ট্রিগার করে, বিপরীত ক্রমে চালানো হয়। একটি compensating transaction হলো একটি নতুন, আলাদা business operation যা পূর্বে committed একটি transaction-এর প্রভাবকে semantically undo করার জন্য ডিজাইন করা (যেমন, "refund" undo করে "charge")। এটি rollback থেকে ভিন্ন কারণ compensation চালানোর আগে মূল operation ইতিমধ্যে committed এবং system-এর বাকি অংশের কাছে দৃশ্যমান ছিল — একটি rollback uncommitted কাজ মুছে দেয়, একটি compensation committed কাজের উপর একটি নতুন সংশোধনমূলক action যোগ করে।
+
+**৬. Choreography-based এবং orchestration-based saga-র তুলনা করুন। প্রতিটির tradeoff কী?**
+Choreography-তে প্রতিটি service domain event প্রকাশ/গ্রহণ করে এবং স্বাধীনভাবে সিদ্ধান্ত নেয় কোন local transaction বা compensation চালাবে — এটি loosely coupled এবং এতে coordination failure-এর কোনো একক point নেই, কিন্তু সামগ্রিক flow ট্রেস করা কঠিন কারণ logic প্রতিটি service-এর event handler জুড়ে ছড়িয়ে থাকে। Orchestration একটি central orchestrator ব্যবহার করে যা explicitly প্রতিটি service call করে এবং failure-এর সময় explicitly compensation ট্রিগার করে — এটি একটি flow হিসেবে বোঝা, test করা, এবং monitor করা সহজ, কিন্তু orchestrator একটি গুরুত্বপূর্ণ infrastructure হয়ে ওঠে যার উপর সবকিছু নির্ভর করে (যদিও এর failure পুনরুদ্ধারযোগ্য, একটি 2PC coordinator-এর failure-এর বিপরীতে, কারণ কোনো cross-service lock ধরে রাখা হয় না)।
+
+**৭. Saga pattern ব্যবহার করে Order, Payment, এবং Inventory service জুড়ে একটি e-commerce checkout flow design করুন। প্রতিটি step-এর জন্য compensating transaction কী?**
+- Order Service: order-কে `PENDING` state-এ তৈরি করা → compensation: order-কে `CANCELLED` চিহ্নিত করা।
+- Payment Service: customer-এর কার্ড থেকে charge করা → compensation: charge refund করা।
+- Inventory Service: order-এর জন্য stock reserve করা → compensation: reserved stock উপলব্ধ inventory-তে ফিরিয়ে দেওয়া।
+যদি payment সফল হওয়ার পরে Inventory reservation ব্যর্থ হয়, saga (orchestrator বা event chain-এর মাধ্যমে) "refund payment" এবং তারপর "cancel order" ট্রিগার করে, সেই বিপরীত ক্রমে, যাতে customer-কে এমন একটি order-এর জন্য কখনো charge করা না হয় যা পূরণ করা যাবে না।
+
+**৮. Saga কেন isolation ত্যাগ করে, এবং এর ফলে সৃষ্ট anomaly প্রশমিত করার ব্যবহারিক কৌশল কী?**
+কারণ প্রতিটি local transaction সাথে সাথেই এবং স্বাধীনভাবে commit হয়, অন্যান্য transaction-কে intermediate, এখনো-চূড়ান্ত-না-হওয়া saga state (যেমন, inventory প্রকৃতপক্ষে reserve হওয়ার আগেই একটি order "confirmed" চিহ্নিত) পর্যবেক্ষণ করা থেকে বিরত রাখার কোনো cross-service lock নেই। একটি সাধারণ প্রশমন হলো একটি "semantic lock" — প্রভাবিত record-কে pending/reserved status দিয়ে চিহ্নিত করা যাতে system-এর অন্যান্য অংশ জানে saga সম্পূর্ণ বা compensate না হওয়া পর্যন্ত এটিকে সাময়িক হিসেবে বিবেচনা করতে হবে, চূড়ান্ত হিসেবে নয়।
+
+**৯. Saga step এবং compensating transaction কেন অবশ্যই idempotent হতে হবে?**
+Distributed messaging এবং retry সাধারণত at-least-once delivery প্রদান করে, তাই একই command বা event একাধিকবার process হতে পারে (যেমন, timeout-triggered retry-র কারণে)। যদি "charge card" বা "refund card" idempotent না হয়, একটি retried message customer-কে দুইবার charge বা দুইবার refund করতে পারে। Idempotency (যেমন, একটি effect প্রয়োগ করার আগে যাচাই করা unique request/operation ID-র মাধ্যমে) নিশ্চিত করে যে পুনরাবৃত্ত delivery state-কে নষ্ট করে না।
+
+**১০. একটি আধুনিক system-এ Saga-র বদলে আপনি আসলে কোন পরিস্থিতিতে 2PC বেছে নেবেন?**
+2PC তখন যুক্তিসঙ্গত হয় যখন আপনার কাছে একটি একক trust/infrastructure boundary-র মধ্যে অল্প সংখ্যক tightly-coupled resource থাকে এবং আপনি সত্যিই intermediate, আংশিকভাবে প্রয়োগ করা state দৃশ্যমান হওয়া সহ্য করতে পারবেন না — উদাহরণস্বরূপ, একটি monolith দুটি database-এ atomically লিখছে, অথবা exactly-once-এর মতো delivery-র জন্য একটি XA-compliant broker-এর মাধ্যমে একটি database write-কে একটি message enqueue-র সাথে coordinate করা। এটি স্বাধীনভাবে deploy করা microservices জুড়ে একটি খারাপ পছন্দ কারণ এটি তাদের availability-কে একসাথে coupled করে দেয় এবং coordinator failure-এ block করে দেয়।
+
+**১১. Saga implement করার ক্ষেত্রে Temporal বা Camunda-র মতো tool-এর ভূমিকা কী, এবং টিমগুলো hand-rolled orchestration-এর চেয়ে এগুলো কেন পছন্দ করে?**
+এগুলো durable execution প্রদান করে: engine প্রতিটি step-এর পরে একটি দীর্ঘস্থায়ী workflow-এর state persist করে, তাই যদি একটি worker process crash করে, execution state হারানো বা manually reconcile করার প্রয়োজন ছাড়াই ঠিক যেখানে থেমেছিল সেখান থেকে resume হয়। তারা প্রতিটি forward step-এর সাথে যুক্ত compensating action সংজ্ঞায়িত করার জন্য built-in construct, automatic retry, এবং in-flight saga-র মধ্যে visibility/monitoring-ও প্রদান করে — orchestration-based saga-র জন্য টিমগুলোকে অন্যথায় নিজেরা তৈরি করতে হতো এমন অনেক ত্রুটিপ্রবণ bookkeeping প্রতিস্থাপন করে।
+
+**১২. একজন junior engineer "consistency guarantee" করার জন্য পাঁচটি ভিন্ন টিমের মালিকানাধীন পাঁচটি microservice জুড়ে 2PC ব্যবহারের প্রস্তাব দেয়। আপনি কী নিয়ে আপত্তি জানাবেন?**
+2PC পাঁচটি service-এরই availability-কে একসাথে coupled করে দেবে — যদি একটি participant ধীর, অপ্রাপ্য হয়, বা এর coordinator প্রোটোকলের মাঝপথে crash করে, তাহলে অন্য প্রতিটি participant lock ধরে block হয়ে যায়, যদিও সেই service-গুলো অন্যথায় সুস্থ এবং স্বাধীনভাবে deployed। এর জন্য পাঁচটিকেই একটি shared transaction coordination mechanism (যেমন, XA) সমর্থন করতে হবে, যা সাধারণ HTTP/event-based microservices-এর জন্য অস্বাভাবিক। একটি saga আরও উপযুক্ত পছন্দ হবে: প্রতিটি service তার স্বাধীন availability বজায় রাখে, এবং cross-service consistency synchronous locking-এর বদলে compensating transaction-এর মাধ্যমে অবশেষে অর্জিত হয়।

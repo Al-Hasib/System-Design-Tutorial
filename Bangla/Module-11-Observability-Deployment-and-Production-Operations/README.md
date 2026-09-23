@@ -1,0 +1,13 @@
+# Module 11: Observability, Deployment & Production Operations
+
+এই পর্যন্ত সবকিছুই ছিল এমন একটা system design করা নিয়ে যা *কাজ করা উচিত*। এই module সেই সবকিছু নিয়ে যা দরকার হয় যখন এটা আসলেই live হয়ে যায়: আপনার user আপনাকে বলার আগেই কীভাবে জানবেন কিছু একটা ভুল হয়েছে, service-টা কীভাবে package ও schedule করা হয় যাতে এটা আসলেই চলতে ও scale করতে পারে, কীভাবে outage ছাড়া একটা change ship করবেন, কীভাবে প্রমাণ করবেন — একটা incident আপনাকে জানতে বাধ্য করার আগেই, ইচ্ছাকৃতভাবে — যে এটা failure সহ্য করতে পারে, এবং একটা পুরো region down হয়ে গেলেও কীভাবে চলতে থাকবেন। এর কোনোটাই box আর arrow-এর diagram-এ দেখা যায় না, কিন্তু এটাই একটা design doc-এ কাজ করা system আর real production traffic, real deploy, এবং real ভোর ৩টার page-এর সংস্পর্শে টিকে থাকা system-এর মধ্যে পার্থক্য।
+
+## এই Module-এর Video সমূহ
+
+| # | Title | Description | Link |
+|---|-------|-------------|------|
+| 43 | Observability: Logging, Metrics & Distributed Tracing | Production-এ আপনার system আসলে কী করছে তা জানার তিনটা pillar, এবং কেন "it works on my machine" scale-এ কোনো debugging strategy না। | [43-observability-logging-metrics-and-distributed-tracing](43-observability-logging-metrics-and-distributed-tracing/README.md) |
+| 44 | Containers & Orchestration: Docker & Kubernetes Fundamentals | Modern infrastructure-এ একটা service আসলে কীভাবে package, schedule, scale, এবং healthy রাখা হয় — প্রতিটা "just deploy it" assumption-এর নিচের layer। | [44-containers-and-orchestration-docker-and-kubernetes-fundamentals](44-containers-and-orchestration-docker-and-kubernetes-fundamentals/README.md) |
+| 45 | Zero-Downtime Deployments & Database Migrations | কোনো maintenance window বা broken request ছাড়াই একটা service-এর নতুন version কীভাবে ship করবেন — এবং এর database schema কীভাবে পরিবর্তন করবেন। | [45-zero-downtime-deployments-and-database-migrations](45-zero-downtime-deployments-and-database-migrations/README.md) |
+| 46 | Testing Distributed Systems: Load Testing & Chaos Engineering | কেন unit test আপনাকে বলে না আপনার system real traffic বা real failure সহ্য করতে পারে কিনা, এবং load testing ও ইচ্ছাকৃত fault injection কীভাবে সেই ফাঁক পূরণ করে। | [46-testing-distributed-systems-load-testing-and-chaos-engineering](46-testing-distributed-systems-load-testing-and-chaos-engineering/README.md) |
+| 47 | Multi-Region Architecture & Disaster Recovery | একটা পুরো region down হয়ে যাওয়ার জন্য design করা — active-active বনাম active-passive, এবং backup/recovery metric (RTO/RPO) যা ঠিক করে একটা disaster কতটা খারাপ হতে পারবে। | [47-multi-region-architecture-and-disaster-recovery](47-multi-region-architecture-and-disaster-recovery/README.md) |
